@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20100805225544
+#
+# Table name: students
+#
+#  id              :integer(4)      not null, primary key
+#  first_name      :string(255)
+#  last_name       :string(255)
+#  graduation_year :integer(4)
+#  teacher_id      :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
+class Student < ActiveRecord::Base
+  attr_accessible :first_name, :last_name, :graduation_year, :teacher_id
+  validates_presence_of :first_name, :last_name, :graduation_year, :teacher_id
+
+  belongs_to :teacher
+  default_scope :order => 'last_name'
+end
