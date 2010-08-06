@@ -18,4 +18,14 @@ class Student < ActiveRecord::Base
 
   belongs_to :teacher
   default_scope :order => 'last_name'
+
+  def grade
+    current_month = Date.current.month
+    current_year  = Date.current.year
+    if current_month >= 7
+      grade = 8 - (graduation_year - current_year) + 1
+    else
+      grade = 8 - (graduation_year - current_year)
+    end
+  end
 end

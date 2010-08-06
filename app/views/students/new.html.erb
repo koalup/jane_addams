@@ -1,4 +1,5 @@
 <h1>New Student</h1>
+
 <% form_for(@student) do |f| %>
   <%= f.error_messages %>
   <div class="field">
@@ -18,7 +19,7 @@
 
   <div class="field">
     <%= f.label :teacher_id %><br />
-    <%= collection_select(:student, :teacher_id, @teacher, :id, :last_name, {:prompt => true}) %>
+    <%= collection_select(:student, :teacher_id, @teacher, :id, :last_comma_first, {:prompt => true}) %>
   </div>
 
   <div class"actions">
