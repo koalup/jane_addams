@@ -1,2 +1,29 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<h1>Edit Student</h1>
+<% form_for(@student) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation_year %><br />
+    <%= f.text_field :graduation_year %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :teacher_id %><br />
+    <%= collection_select(:student, :teacher_id, @teacher, :id, :last_name, {:prompt => true}) %>
+  </div>
+
+  <div class"actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+

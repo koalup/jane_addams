@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :teacher_id %><br />
-    <%= f.text_field :teacher_id %><br />
+    <%= collection_select(:student, :teacher_id, @teacher, :id, :last_name, {:prompt => true}) %>
   </div>
 
   <div class"actions">
