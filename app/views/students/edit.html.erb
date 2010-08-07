@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :teacher_id %><br />
-    <%= collection_select(:student, :teacher_id, @teacher, :id, :last_name, {:prompt => true}) %>
+    <%= collection_select(:student, :teacher_id, @teacher, :id, :last_comma_first, {:prompt => true}) %>
   </div>
 
   <div class"actions">

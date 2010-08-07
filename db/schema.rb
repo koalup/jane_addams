@@ -9,7 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100805225544) do
+ActiveRecord::Schema.define(:version => 20100806220552) do
+
+  create_table "parents", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "home_phone"
+    t.string   "cell_phone"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.boolean  "show_cell_phone", :default => false
+    t.boolean  "mailing_list",    :default => false
+    t.boolean  "ptsa_member",     :default => false
+    t.boolean  "publish",         :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "students", :force => true do |t|
     t.string   "first_name"
