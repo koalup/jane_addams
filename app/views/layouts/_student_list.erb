@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Graduation Year</th>
+    <th>Grade</th>
+    <th>Teacher</th>
+  </tr>
+<% @students.each do |student| %>
+      <td><%=h student.id %></td>
+      <td><%=h student.last_name %>, <%=h student.first_name %></td>
+      <td><%=h student.graduation_year %></td>
+      <td><%=h student.grade %></td>
+      <td><%=h student.teacher.last_comma_first %></td>
+      <td><%= link_to 'Show', student %></td>
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>
+      <td><%= link_to 'Delete', student, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+<% end %>
+</table>

@@ -1,0 +1,28 @@
+<% form_for(@student) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation_year %><br />
+    <%= f.text_field :graduation_year %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :teacher_id %><br />
+    <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, {:prompt => true}) %>
+  </div>
+
+  <div class"actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>

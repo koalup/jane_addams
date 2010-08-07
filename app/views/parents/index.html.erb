@@ -5,8 +5,7 @@
 <table>
   <tr>
     <th>id</th>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Name</th>
     <th>email</th>
     <th>Home Phone</th>
     <th>Cell Phone</th>
@@ -15,16 +14,11 @@
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
-    <th>Show Cell</th>
-    <th>Mailing</th>
-    <th>PTSA Member</th>
-    <th>Publish</th>
     <th></th>
   </tr>
 <% @parents.each do |parent| %>
       <td><%=h parent.id %></td>
-      <td><%=h parent.first_name %></td>
-      <td><%=h parent.last_name %></td>
+      <td><%=h "#{parent.last_name}, #{parent.first_name}" %></td>
       <td><%=h parent.email %></td>
       <td><%=h parent.home_phone %></td>
       <td><%=h parent.cell_phone %></td>
@@ -33,10 +27,6 @@
       <td><%=h parent.city %></td>
       <td><%=h parent.state %></td>
       <td><%=h parent.zip %></td>
-      <td><%=h parent.show_cell_phone %></td>
-      <td><%=h parent.mailing_list %></td>
-      <td><%=h parent.ptsa_member %></td>
-      <td><%=h parent.publish %></td>
       <td><%= link_to 'Show', parent %></td>
       <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
       <td><%= link_to 'Delete', parent, :confirm => 'Are you sure?', :method => :delete %></td>

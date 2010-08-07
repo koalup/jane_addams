@@ -23,4 +23,8 @@ class Teacher < ActiveRecord::Base
   def last_comma_first
     "#{last_name}, #{first_name}"
   end
+
+  def location_dash_teacher
+    "#{location} - #{last_name}, #{first_name}"
+  end
 end

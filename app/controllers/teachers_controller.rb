@@ -5,6 +5,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @students = @teacher.students
     @title = "#{@teacher.first_name} #{@teacher.last_name}"
   end
 
