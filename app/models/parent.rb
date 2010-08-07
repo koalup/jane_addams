@@ -25,4 +25,6 @@
 class Parent < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :home_phone, :cell_phone, :address_line_1, :address_line_2, :city, :state, :zip, :show_cell_phone, :mailing_list, :ptsa_member, :publish
   validates_presence_of :first_name, :last_name
+  has_and_belongs_to_many :students
+  default_scope :order => 'last_name'
 end

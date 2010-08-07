@@ -1,13 +1,13 @@
-<h1><%= @teacher.last_name %>, <%= @teacher.first_name %></h1>
+<h1><%=h "#{@teacher.last_name}, #{@teacher.first_name}" %></h1>
 <dl>
   <dt>Position</dt>
-  <dd><%= @teacher.position %></dd>
+  <dd><%=h @teacher.position %></dd>
   <dt>Position Type</dt>
-  <dd><%= @teacher.position_type %></dd>
+  <dd><%=h @teacher.position_type %></dd>
   <dt>Email</dt>
-  <dd><%= @teacher.email %></dd>
+  <dd><%=h @teacher.email %></dd>
   <dt>Location</dt>
-  <dd><%= @teacher.location %></dd>
+  <dd><%=h @teacher.location %></dd>
 </dl>
 <h2>Students</h2>
 <%= render 'layouts/student_list' %>

@@ -16,6 +16,7 @@ class Student < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :graduation_year, :teacher_id
   validates_presence_of :first_name, :last_name, :graduation_year, :teacher_id
 
+  has_and_belongs_to_many :parents
   belongs_to :teacher
   default_scope :order => 'last_name'
 

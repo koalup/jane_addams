@@ -1,2 +1,7 @@
-<h1>Parents#show</h1>
-<p>Find me in app/views/parents/show.html.erb</p>
+<h1><%=h "#{@parent.last_name}, #{@parent.first_name}" %></h1>
+<dl>
+  <dt>email</dt>
+  <dd><%=h @parent.email %></dd>
+</dl>
+<h2>Students</h2>
+<%= render 'layouts/student_list' %>

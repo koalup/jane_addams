@@ -4,6 +4,8 @@ class ParentsController < ApplicationController
   end
 
   def show
+    @parent = Parent.find(params[:id])
+    @students = @parent.students
   end
 
   def new

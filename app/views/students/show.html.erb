@@ -1,2 +1,13 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1><%=h "#{@student.last_name}, #{@student.first_name}" %></h1>
+<dl>
+  <dt>Graduation Year</dt>
+  <dd><%=h @student.graduation_year %></dd>
+  <dt>Grade</dt>
+  <dd><%=h @student.grade %></dd> 
+  <dt>Teacher</dt>
+  <dd><%=h @student.teacher.last_comma_first %></dd> 
+  <dt>Room</dt>
+  <dd><%=h @student.teacher.location %></dd> 
+</dl>
+<h2>Parents</h2>
+<%= render 'layouts/parent_list' %>  

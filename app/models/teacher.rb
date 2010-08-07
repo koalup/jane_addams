@@ -19,6 +19,7 @@ class Teacher < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :position, :position_type
   has_many :students
+  default_scope :order => 'last_name'
 
   def last_comma_first
     "#{last_name}, #{first_name}"
