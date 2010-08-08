@@ -40,4 +40,8 @@ class ParentsController < ApplicationController
     redirect_to(parents_url, :notice => "#{@parent.display_name} was successfully removed.")
   end
 
+  def add_student
+    @parent = Parent.find(params[:id])
+    @students.find(:all)
+  end
 end
