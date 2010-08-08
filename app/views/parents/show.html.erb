@@ -1,7 +1,8 @@
 <h1><%=h "#{@parent.last_name}, #{@parent.first_name}" %></h1>
+<p><%= link_to 'Edit', edit_parent_path(@parent) %></p>
 <dl>
   <dt>email</dt>
   <dd><%=h @parent.email %></dd>
 </dl>
-<h2>Students</h2>
+<h2>Children</h2>
 <%= render 'layouts/student_list' %>

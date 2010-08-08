@@ -14,7 +14,7 @@
   </tr>
 <% @parents.each do |parent| %>
       <td><%=h parent.id %></td>
-      <td><%=h "#{parent.last_name}, #{parent.first_name}" %></td>
+      <td><%=h parent.display_name %></td>
       <td><%=h parent.email %></td>
       <td><%=h parent.home_phone %></td>
       <td><%=h parent.cell_phone %></td>

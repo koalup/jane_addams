@@ -20,6 +20,10 @@ class Student < ActiveRecord::Base
   belongs_to :teacher
   default_scope :order => 'last_name'
 
+  def display_name
+    "#{last_name}, #{first_name}"
+  end
+
   def grade
     current_month = Date.current.month
     current_year  = Date.current.year

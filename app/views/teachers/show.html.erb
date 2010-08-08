@@ -1,4 +1,5 @@
-<h1><%=h "#{@teacher.last_name}, #{@teacher.first_name}" %></h1>
+<h1><%=h "#{@teacher.display_name}" %></h1>
+<p><%= link_to 'Edit', edit_teacher_path(@teacher) %></p>
 <dl>
   <dt>Position</dt>
   <dd><%=h @teacher.position %></dd>

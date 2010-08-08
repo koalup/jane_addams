@@ -1,11 +1,12 @@
-<h1><%=h "#{@student.last_name}, #{@student.first_name}" %></h1>
+<h1><%=h "#{@student.display_name}" %></h1>
+<p><%= link_to 'Edit', edit_student_path(@student) %></p>
 <dl>
   <dt>Graduation Year</dt>
   <dd><%=h @student.graduation_year %></dd>
   <dt>Grade</dt>
   <dd><%=h @student.grade %></dd> 
   <dt>Teacher</dt>
-  <dd><%=h @student.teacher.last_comma_first %></dd> 
+  <dd><%=h @student.teacher.display_name %></dd> 
   <dt>Room</dt>
   <dd><%=h @student.teacher.location %></dd> 
 </dl>

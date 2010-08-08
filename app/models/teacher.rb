@@ -21,7 +21,7 @@ class Teacher < ActiveRecord::Base
   has_many :students
   default_scope :order => 'last_name'
 
-  def last_comma_first
+  def display_name
     "#{last_name}, #{first_name}"
   end
 

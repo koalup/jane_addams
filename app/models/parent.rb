@@ -27,4 +27,9 @@ class Parent < ActiveRecord::Base
   validates_presence_of :first_name, :last_name
   has_and_belongs_to_many :students
   default_scope :order => 'last_name'
+
+  def display_name
+    "#{last_name}, #{first_name}"
+  end
+
 end

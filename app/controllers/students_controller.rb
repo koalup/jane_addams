@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
     @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
     @student = Student.new(params[:student])
     if @student.save
-      redirect_to(students_url, :notice => "#{@student.first_name} #{@student.last_name} was successfully created.")
+      redirect_to(students_url, :notice => "#{@student.display_name} was successfully created.")
     else
       render 'new'
     end
@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
     @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
     @student = Student.find(params[:id])
     if @student.update_attributes(params[:student])
-      redirect_to(students_url, :notice => "#{@student.first_name} #{@student.last_name} was successfully updated.")
+      redirect_to(students_url, :notice => "#{@student.display_name} was successfully updated.")
     else
       render 'edit'
     end
@@ -41,6 +41,6 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-    redirect_to(students_url, :notice => "#{@student.first_name} #{@student.last_name} was successfully removed.")
+    redirect_to(students_url, :notice => "#{@student.display_name} was successfully removed.")
   end
 end
