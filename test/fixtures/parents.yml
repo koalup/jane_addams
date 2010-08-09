@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100806220552
+# Schema version: 20100809112804
 #
 # Table name: parents
 #
@@ -17,7 +17,7 @@
 #  show_cell_phone :boolean(1)
 #  mailing_list    :boolean(1)
 #  ptsa_member     :boolean(1)
-#  publish         :boolean(1)
+#  publish         :boolean(1)      default(TRUE)
 #  created_at      :datetime
 #  updated_at      :datetime
 #

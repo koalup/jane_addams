@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100807215113) do
+ActiveRecord::Schema.define(:version => 20100809112804) do
 
   create_table "parents", :force => true do |t|
     t.string   "first_name"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20100807215113) do
   create_table "parents_students", :id => false, :force => true do |t|
     t.integer "parent_id"
     t.integer "student_id"
+  end
+
+  create_table "ptsa_members", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "position"
+    t.string   "position_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "students", :force => true do |t|

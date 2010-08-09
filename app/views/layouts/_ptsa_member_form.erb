@@ -27,13 +27,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %><br />
-  </div>
-
-  <div class="field">
     <%= f.label :position_type %><br />
-    <%= f.select :position_type, @teacher.position_types, { :include_blank => true } %>
+    <%= f.select :position_type, @ptsa_member.position_types, { :include_blank => true } %>
   </div>
 
   <div class"actions">
