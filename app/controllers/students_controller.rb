@@ -11,6 +11,7 @@ class StudentsController < ApplicationController
   def new
     @student = Student.new
     @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
+    @parents = Parent.find(:all)
   end
 
   def create
@@ -26,6 +27,7 @@ class StudentsController < ApplicationController
   def edit
     @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
     @student = Student.find(params[:id])
+    @parents = Parent.find(:all)
   end
 
   def update

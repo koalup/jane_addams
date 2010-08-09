@@ -21,6 +21,12 @@
     <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, {:prompt => true}) %>
   </div>
 
+  <label for="parents">Parents</label><br />
+  <% @parents.each do |parent| %>
+    <%= check_box_tag("student[parent_list][#{parent.id}]","1",@student.parents.detect{|d| d == parent}) %>
+    <%= "#{parent.display_name}" %> <br />
+  <% end %>
+
   <div class"actions">
     <%= f.submit "Submit" %>
   </div>

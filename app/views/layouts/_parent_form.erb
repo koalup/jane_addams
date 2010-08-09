@@ -57,6 +57,13 @@
     <%= f.label :publish %><br />
     <%= f.check_box :publish %><br />
   </div>
+
+  <label for="students">Children</label><br />
+  <% @students.each do |student| %>
+    <%= check_box_tag("parent[student_list][#{student.id}]","1",@parent.students.detect{|d| d == student}) %>
+    <%= "#{student.display_name}" %> <br />
+  <% end %>
+
   <div class"actions">
     <%= f.submit "Submit" %>
   </div>

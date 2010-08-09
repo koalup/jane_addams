@@ -13,12 +13,15 @@
 #
 
 class Student < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :graduation_year, :teacher_id
+  attr_accessible :first_name, :last_name, :graduation_year, :teacher_id, :parent_list
   validates_presence_of :first_name, :last_name, :graduation_year, :teacher_id
 
   has_and_belongs_to_many :parents
   belongs_to :teacher
   default_scope :order => 'last_name'
+
+  attr_accessor :parent_list
+  after_save :update_parents
 
   def display_name
     "#{last_name}, #{first_name}"
@@ -32,5 +35,11 @@ class Student < ActiveRecord::Base
     else
       grade = 8 - (graduation_year - current_year)
     end
+  end
+
+  def update_parents
+    parents.delete_all
+    selected_parents = parent_list.nil? ? [] : parent_list.keys.collect{|id| Parent.find_by_id(id) }
+    selected_parents.each {|parent| self.parents << parent}
   end
 end

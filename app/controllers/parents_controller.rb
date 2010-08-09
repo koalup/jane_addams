@@ -10,10 +10,12 @@ class ParentsController < ApplicationController
 
   def new
     @parent = Parent.new
+    @students = Student.find(:all)
   end
 
   def create
     @parent = Parent.new(params[:parent])
+    @students = Student.find(:all)
     if @parent.save
       redirect_to(parents_url, :notice => "#{@parent.display_name} was successfully created.")
     else
@@ -23,6 +25,7 @@ class ParentsController < ApplicationController
  
   def edit
     @parent = Parent.find(params[:id])
+    @students = Student.find(:all)
   end
 
   def update

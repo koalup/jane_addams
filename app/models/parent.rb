@@ -23,13 +23,21 @@
 #
 
 class Parent < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :home_phone, :cell_phone, :address_line_1, :address_line_2, :city, :state, :zip, :show_cell_phone, :mailing_list, :ptsa_member, :publish
+  attr_accessible :first_name, :last_name, :email, :home_phone, :cell_phone, :address_line_1, :address_line_2, :city, :state, :zip, :show_cell_phone, :mailing_list, :ptsa_member, :publish, :student_list
   validates_presence_of :first_name, :last_name
   has_and_belongs_to_many :students
   default_scope :order => 'last_name'
+
+  attr_accessor :student_list
+  after_save :update_students
 
   def display_name
     "#{last_name}, #{first_name}"
   end
 
+  def update_students
+    students.delete_all
+    selected_students = student_list.nil? ? [] : student_list.keys.collect{|id| Student.find_by_id(id) }
+    selected_students.each {|student| self.students << student}
+  end
 end
