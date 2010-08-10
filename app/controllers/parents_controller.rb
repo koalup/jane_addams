@@ -31,7 +31,7 @@ class ParentsController < ApplicationController
   def update
     @parent = Parent.find(params[:id])
     if @parent.update_attributes(params[:parent])
-      redirect_to(parents_url, :notice => "#{@parent.display_name} was successfully updated.")
+      redirect_to(@parent, :notice => "#{@parent.display_name} was successfully updated.")
     else
       render 'edit'
     end

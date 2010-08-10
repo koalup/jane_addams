@@ -1,8 +1,26 @@
-<h1><%=h "#{@parent.last_name}, #{@parent.first_name}" %></h1>
-<p><%= link_to 'Edit', edit_parent_path(@parent) %></p>
+<h1>Show Parent</h1>
+<fieldset>
+<legend><%= "#{@parent.display_name}" %> - <%= link_to 'Edit', edit_parent_path(@parent) %></legend>
 <dl>
-  <dt>email</dt>
+  <dt>Email</dt>
   <dd><%=h @parent.email %></dd>
+  <dt>Home Phone</dt>
+  <dd><%=h @parent.home_phone %></dd>
+  <dt>Cell Phone</dt>
+  <dd><%=h @parent.cell_phone %></dd>
+  <dt>Address</dt>
+  <dd><%=h @parent.address_line_1 %></dd>
+  <dd><%=h @parent.address_line_2 %></dd>
+  <dd><%=h "#{@parent.city} #{@parent.state}, #{@parent.zip}" %></dd>
+  <dt>Properties</dt>
+  <dd>Show cell phone: <b><%= @parent.show_cell_phone %></b></dd>
+  <dd>Yahoo mailing list: <b><%= @parent.mailing_list %></b></dd>
+  <dd>PTSA Member: <b><%= @parent.ptsa_member %></b></dd>
+  <dd>Publish in directory: <b><%= @parent.publish %></b></dd>
 </dl>
-<h2>Children</h2>
+</fieldset>
+
+<fieldset>
+<legend>Children</legend>
 <%= render 'layouts/student_list' %>
+</fieldset>

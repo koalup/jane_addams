@@ -32,7 +32,11 @@ class Parent < ActiveRecord::Base
   after_save :update_students
 
   def display_name
-    "#{last_name}, #{first_name}"
+    if last_name.nil?
+      display_name=""
+    else
+      "#{last_name}, #{first_name}"
+    end
   end
 
   def update_students

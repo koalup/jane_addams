@@ -1,5 +1,7 @@
 <h1>Parents</h1>
-<%= link_to 'New Parent', new_parent_path %>
 <p><%= notice %></p>
-
+<fieldset>
+<legend>Parent List</legend>
+<p><%= link_to 'New Parent', new_parent_path %></p>
 <%= render 'layouts/parent_list' %>
+</fieldset>

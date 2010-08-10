@@ -1,0 +1,25 @@
+.navigation {
+  float: right;
+}
+
+.navigation {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+ul.navigation {
+  margin: 0;
+}
+
+.navigation li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+.navigation li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+

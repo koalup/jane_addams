@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Position</th>
+    <th>Position Type</th>
+  </tr>
+
+<% @ptsa_members.each do |ptsa_member| %>
+    <tr>
+      <td><%= ptsa_member.id %></td>
+      <td><%= link_to ptsa_member.display_name, ptsa_member %></td>
+      <td><%= ptsa_member.email %></td>
+      <td><%= ptsa_member.position %></td>
+      <td><%= ptsa_member.position_type %></td>
+      <td><%= link_to 'Edit', edit_ptsa_member_path(ptsa_member) %></td>
+      <td><%= link_to 'Delete', ptsa_member, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+<% end %>
+</table

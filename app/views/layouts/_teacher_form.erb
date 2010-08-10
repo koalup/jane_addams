@@ -1,6 +1,8 @@
 <% form_for(@teacher) do |f| %>
   <%= f.error_messages %>
 
+<fieldset>
+  <legend><%= "#{@teacher.display_name}" %></legend>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -35,8 +37,10 @@
     <%= f.label :position_type %><br />
     <%= f.select :position_type, @teacher.position_types, { :include_blank => true } %>
   </div>
+</fieldset>
 
   <div class"actions">
     <%= f.submit "Submit" %>
   </div>
 <% end %>
+<p>

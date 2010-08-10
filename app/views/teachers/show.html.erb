@@ -1,5 +1,7 @@
-<h1><%=h "#{@teacher.display_name}" %></h1>
+<h1>Show Teacher</h1>
 <p><%= link_to 'Edit', edit_teacher_path(@teacher) %></p>
+<fieldset>
+<legend><%= "#{@teacher.display_name}" %> - <%= link_to 'Edit', edit_teacher_path(@teacher) %></legend>
 <dl>
   <dt>Position</dt>
   <dd><%=h @teacher.position %></dd>
@@ -10,5 +12,8 @@
   <dt>Location</dt>
   <dd><%=h @teacher.location %></dd>
 </dl>
-<h2>Students</h2>
+</fieldset>
+<fieldset>
+<legend>Students</legend>
 <%= render 'layouts/student_list' %>
+</fieldset>

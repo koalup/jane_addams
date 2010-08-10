@@ -22,7 +22,11 @@ class Teacher < ActiveRecord::Base
   default_scope :order => 'last_name'
 
   def display_name
-    "#{last_name}, #{first_name}"
+    if last_name.nil?
+      display_name=""
+    else
+      "#{last_name}, #{first_name}"
+    end
   end
 
   def position_types

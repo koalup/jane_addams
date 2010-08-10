@@ -1,6 +1,8 @@
 <% form_for(@parent) do |f| %>
   <%= f.error_messages %>
 
+<fieldset>
+  <legend><%= "#{@parent.display_name}" %></legend>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -57,13 +59,15 @@
     <%= f.label :publish %><br />
     <%= f.check_box :publish %><br />
   </div>
+</fieldset>
 
-  <label for="students">Children</label><br />
+<fieldset>
+  <legend>Children</legend>
   <% @students.each do |student| %>
     <%= check_box_tag("parent[student_list][#{student.id}]","1",@parent.students.detect{|d| d == student}) %>
     <%= "#{student.display_name}" %> <br />
   <% end %>
-
+</fieldset>
   <div class"actions">
     <%= f.submit "Submit" %>
   </div>

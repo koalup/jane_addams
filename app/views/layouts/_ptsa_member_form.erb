@@ -1,6 +1,8 @@
-<% form_for(@teacher) do |f| %>
+<% form_for(@ptsa_member) do |f| %>
   <%= f.error_messages %>
 
+<fieldset>
+  <legend><%= "#{@ptsa_member.display_name}" %></legend>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -23,13 +25,9 @@
 
   <div class="field">
     <%= f.label :position_type %><br />
-    <%= f.text_field :position_type %><br />
-  </div>
-
-  <div class="field">
-    <%= f.label :position_type %><br />
     <%= f.select :position_type, @ptsa_member.position_types, { :include_blank => true } %>
   </div>
+</fieldset>
 
   <div class"actions">
     <%= f.submit "Submit" %>

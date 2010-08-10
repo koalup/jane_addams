@@ -1,6 +1,8 @@
 <% form_for(@student) do |f| %>
   <%= f.error_messages %>
 
+<fieldset>
+  <legend><%= "#{@student.display_name}" %></legend>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -20,12 +22,15 @@
     <%= f.label :teacher_id %><br />
     <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, {:prompt => true}) %>
   </div>
+</fieldset>
 
-  <label for="parents">Parents</label><br />
+<fieldset>
+  <legend>Parents</legend>
   <% @parents.each do |parent| %>
     <%= check_box_tag("student[parent_list][#{parent.id}]","1",@student.parents.detect{|d| d == parent}) %>
     <%= "#{parent.display_name}" %> <br />
   <% end %>
+</fieldset>
 
   <div class"actions">
     <%= f.submit "Submit" %>
