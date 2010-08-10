@@ -18,7 +18,7 @@ class PtsaMembersController < ApplicationController
   def create
     @ptsa_member = PtsaMember.new(params[:ptsa_member])
     if @ptsa_member.save
-      redirect_to(ptsa_members_url, :notice => "#{@ptsa_member.display_name} was successfully created.")
+      redirect_to(@ptsa_member, :notice => "#{@ptsa_member.display_name} was successfully created.")
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class PtsaMembersController < ApplicationController
   def update
     @ptsa_member = PtsaMember.find(params[:id])
     if @ptsa_member.update_attributes(params[:ptsa_member])
-      redirect_to(ptsa_members_url, :notice => "#{@ptsa_member.display_name} was successfully updated.")
+      redirect_to(@ptsa_member, :notice => "#{@ptsa_member.display_name} was successfully updated.")
     else
       render 'edit'
     end

@@ -22,14 +22,13 @@
     <%= f.label :teacher_id %><br />
     <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, {:prompt => true}) %>
   </div>
-</fieldset>
-
-<fieldset>
-  <legend>Parents</legend>
-  <% @parents.each do |parent| %>
-    <%= check_box_tag("student[parent_list][#{parent.id}]","1",@student.parents.detect{|d| d == parent}) %>
-    <%= "#{parent.display_name}" %> <br />
-  <% end %>
+  <fieldset>
+    <legend>Parents</legend>
+    <% @parents.each do |parent| %>
+      <%= check_box_tag("student[parent_list][#{parent.id}]","1",@student.parents.detect{|d| d == parent}) %>
+      <%= "#{parent.display_name}" %> <br />
+    <% end %>
+  </fieldset>
 </fieldset>
 
   <div class"actions">

@@ -1,0 +1,92 @@
+<h1>Directory</h1>
+<h2>Administrative Positions</h2>
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Location</th>
+    <th>Name</th>
+    <th>Email Address</th>
+  </tr>
+<% @teachers_administrative.each do |teacher| %>
+  <tr>
+    <td><%= teacher.position %></td>
+    <td><%= teacher.location %></td>
+    <td><%= teacher.display_name %></td>
+    <td><%= teacher.email %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2>Classroom Teachers</h2>
+<table>
+  <tr>
+    <th>Grade</th>
+    <th>Location</th>
+    <th>Position</th>
+    <th>Name</th>
+    <th>Email Address</th>
+  </tr>
+<% @teachers_teacher.each do |teacher| %>
+  <tr>
+    <td>Grade</td>
+    <td><%= teacher.location %></td>
+    <td><%= teacher.position %></td>
+    <td><%= teacher.display_name %></td>
+    <td><%= teacher.email %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2>Specialists and Support Staff</h2>
+<table>
+  <tr>
+    <th>Grade</th>
+    <th>Location</th>
+    <th>Position</th>
+    <th>Name</th>
+    <th>Email Address</th>
+  </tr>
+<% @teachers_specialist.each do |teacher| %>
+  <tr>
+    <td>Grade</td>
+    <td><%= teacher.location %></td>
+    <td><%= teacher.position %></td>
+    <td><%= teacher.display_name %></td>
+    <td><%= teacher.email %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<h2>PTSA Council</h2>
+<table>
+  <tr>
+    <th>Executive Board Positions</th>
+    <th>Officer</th>
+    <th>Email Address</th>
+  </tr>
+<% @ptsa_members_executive_board.each do |ptsa_member| %>
+  <tr>
+    <td><%= ptsa_member.position %></td>
+    <td><%= ptsa_member.display_name %></td>
+    <td><%= ptsa_member.email %></td>
+  </tr>
+<% end %>
+</table>
+
+<table>
+  <tr>
+    <th>Board Positions</th>
+    <th>Officer</th>
+    <th>Email Address</th>
+  </tr>
+<% @ptsa_members_board.each do |ptsa_member| %>
+  <tr>
+    <td><%= ptsa_member.position %></td>
+    <td><%= ptsa_member.display_name %></td>
+    <td><%= ptsa_member.email %></td>
+  </tr>
+<% end %>
+</table>
+
+

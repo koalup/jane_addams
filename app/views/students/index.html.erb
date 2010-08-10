@@ -1,7 +1,7 @@
 <h1>Students</h1>
-
-<%= link_to 'New Student', new_student_path %>
-
 <p><%= notice %></p>
-
-<%= render 'layouts/student_list' %>
+<fieldset>
+  <legend>Student List</legend>
+  <p><%= link_to 'New Student', new_student_path %></p>
+  <%= render 'layouts/student_list' %>
+</fieldset>

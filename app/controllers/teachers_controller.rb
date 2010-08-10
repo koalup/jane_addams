@@ -19,7 +19,7 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(params[:teacher])
     if @teacher.save
-      redirect_to(teachers_url, :notice => "#{@teacher.display_name} was successfully created.")
+      redirect_to(@teacher, :notice => "#{@teacher.display_name} was successfully created.")
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class TeachersController < ApplicationController
   def update
     @teacher = Teacher.find(params[:id])
     if @teacher.update_attributes(params[:teacher])
-      redirect_to(teachers_url, :notice => "#{@teacher.display_name} was successfully updated.") 
+      redirect_to(@teacher, :notice => "#{@teacher.display_name} was successfully updated.") 
     else
       render 'edit'
     end

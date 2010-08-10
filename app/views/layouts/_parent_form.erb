@@ -59,14 +59,13 @@
     <%= f.label :publish %><br />
     <%= f.check_box :publish %><br />
   </div>
-</fieldset>
-
 <fieldset>
   <legend>Children</legend>
   <% @students.each do |student| %>
     <%= check_box_tag("parent[student_list][#{student.id}]","1",@parent.students.detect{|d| d == student}) %>
     <%= "#{student.display_name}" %> <br />
   <% end %>
+</fieldset>
 </fieldset>
   <div class"actions">
     <%= f.submit "Submit" %>

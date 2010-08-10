@@ -1,18 +1,19 @@
 <h1>Show Student</h1>
+<p><%= notice %></p>
 <fieldset>
-<legend><%= "#{@student.display_name}" %> - <%= link_to 'Edit', edit_student_path(@student) %></legend>
-<dl>
-  <dt>Graduation Year</dt>
-  <dd><%= @student.graduation_year %></dd>
-  <dt>Grade</dt>
-  <dd><%= @student.grade %></dd> 
-  <dt>Teacher</dt>
-  <dd><%= link_to @student.teacher.display_name, @student.teacher %></dd> 
-  <dt>Room</dt>
-  <dd><%= @student.teacher.location %></dd> 
-</dl>
-</fieldset>
-<fieldset>
-<legend>Parents</legend>
-<%= render 'layouts/parent_list' %>  
+  <legend><%= "#{@student.display_name}" %> - <%= link_to 'Edit', edit_student_path(@student) %></legend>
+  <dl>
+    <dt>Graduation Year</dt>
+    <dd><%= @student.graduation_year %></dd>
+    <dt>Grade</dt>
+    <dd><%= @student.grade %></dd> 
+    <dt>Teacher</dt>
+    <dd><%= link_to @student.teacher.display_name, @student.teacher %></dd> 
+    <dt>Room</dt>
+    <dd><%= @student.teacher.location %></dd> 
+  </dl>
+  <fieldset>
+    <legend>Parents</legend>
+    <%= render 'layouts/parent_list' %>  
+  </fieldset>
 </fieldset>

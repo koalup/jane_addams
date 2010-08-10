@@ -17,7 +17,7 @@ class ParentsController < ApplicationController
     @parent = Parent.new(params[:parent])
     @students = Student.find(:all)
     if @parent.save
-      redirect_to(parents_url, :notice => "#{@parent.display_name} was successfully created.")
+      redirect_to(@parent, :notice => "#{@parent.display_name} was successfully created.")
     else
       render 'new'
     end

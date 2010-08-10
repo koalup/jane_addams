@@ -1,5 +1,7 @@
 <h1>Teachers</h1>
-<%= link_to 'New Teacher', new_teacher_path %>
 <p><%= notice %></p>
-
-<%= render 'layouts/teacher_list' %>
+<fieldset>
+  <legend>Teacher List</legend>
+  <p><%= link_to 'New Teacher', new_teacher_path %></p>
+  <%= render 'layouts/teacher_list' %>
+</fieldset>
