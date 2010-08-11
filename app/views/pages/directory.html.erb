@@ -90,7 +90,7 @@
 </table>
 
 <% @teachers_teacher.each do |teacher| %>
-  <p><%= teacher.display_name %> <%= teacher.location %> <%= teacher.grade %></p>
+  <b><%= teacher.display_name %> | <%= teacher.location %> | <%= teacher.grade %></b>
   <table>
   <% teacher.students.each do |student| %>  
     <tr>
