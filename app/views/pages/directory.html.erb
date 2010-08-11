@@ -89,4 +89,25 @@
 <% end %>
 </table>
 
-
+<% @teachers_teacher.each do |teacher| %>
+  <p><%= teacher.display_name %> <%= teacher.location %> <%= teacher.grade %></p>
+  <table>
+  <% teacher.students.each do |student| %>  
+    <tr>
+      <td><%= student.display_name %></td>
+      <td><table>
+        <% student.parents.each do |parent| %>
+        <tr>
+          <td><%= parent.display_name %><td>
+          <td><%= parent.home_phone %><td>
+          <td><%= parent.cell_phone %><td>
+          <td><%= parent.address_line_1 %> <%= parent.address_line_2 %> <%= parent.city %> <%= parent.state %> <%= parent.zip %><td>
+          <td><%= parent.email %><td>
+        </tr>
+        <% end %>
+        </table></td>
+      <td><%= student.grade %>
+    </tr>
+    <% end %>
+  </table>
+<% end %>

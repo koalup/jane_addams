@@ -12,5 +12,8 @@ class PagesController < ApplicationController
 
     @ptsa_members_executive_board = PtsaMember.find(:all, :conditions => "position_type = 'Executive Board'")
     @ptsa_members_board = PtsaMember.find(:all, :conditions => "position_type = 'Board'")
+
+    @students = Student.all
+    @parents = Parent.find(:all)
   end
 end
