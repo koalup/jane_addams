@@ -9,11 +9,13 @@
   <dd><%=h @teacher.position_type %></dd>
   <dt>Email</dt>
   <dd><%=h @teacher.email %></dd>
+  <dt>Grade</dt>
+  <dd><%=h @teacher.grade %></dd>
   <dt>Location</dt>
   <dd><%=h @teacher.location %></dd>
 </dl>
-</fieldset>
 <fieldset>
 <legend>Students</legend>
 <%= render 'layouts/student_list' %>
+</fieldset>
 </fieldset>

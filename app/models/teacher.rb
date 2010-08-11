@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100805051500
+# Schema version: 20100811084209
 #
 # Table name: teachers
 #
@@ -12,10 +12,11 @@
 #  location      :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  grade         :string(255)
 #
 
 class Teacher < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :position, :position_type, :location
+  attr_accessible :first_name, :last_name, :email, :position, :position_type, :location, :grade
 
   validates_presence_of :first_name, :last_name, :position, :position_type
   has_many :students

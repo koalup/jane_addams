@@ -1,6 +1,5 @@
 <table>
   <tr>
-    <th>id</th>
     <th>Name</th>
     <th>email</th>
     <th>Home Phone</th>
@@ -13,7 +12,6 @@
     <th></th>
   </tr>
 <% @parents.each do |parent| %>
-      <td><%=h parent.id %></td>
       <td><%= link_to parent.display_name, parent %></td>
       <td><%=h parent.email %></td>
       <td><%=h parent.home_phone %></td>

@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
+    @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'", :order => "location")
     @parents = Parent.find(:all)
   end
 
@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
   end 
 
   def edit
-    @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
+    @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'", :order => "location")
     @student = Student.find(params[:id])
     @parents = Parent.find(:all)
   end

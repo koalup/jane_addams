@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100805051500
+# Schema version: 20100811084209
 #
 # Table name: teachers
 #
@@ -12,6 +12,7 @@
 #  location      :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  grade         :string(255)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

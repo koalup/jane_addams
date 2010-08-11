@@ -1,8 +1,8 @@
 <table>
   <tr>
-    <th>id</th>
     <th>Name</th>
     <th>Email</th>
+    <th>Grade</th>
     <th>Position</th>
     <th>Position Type</th>
     <th>Location</th>
@@ -10,9 +10,9 @@
 
 <% @teachers.each do |teacher| %>
     <tr>
-      <td><%= teacher.id %></td>
       <td><%= link_to teacher.display_name, teacher %></td>
       <td><%= teacher.email %></td>
+      <td><%= teacher.grade %></td>
       <td><%= teacher.position %></td>
       <td><%= teacher.position_type %></td>
       <td><%= teacher.location %></td>

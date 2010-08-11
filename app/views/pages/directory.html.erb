@@ -28,7 +28,7 @@
   </tr>
 <% @teachers_teacher.each do |teacher| %>
   <tr>
-    <td>Grade</td>
+    <td><%= teacher.grade %></td>
     <td><%= teacher.location %></td>
     <td><%= teacher.position %></td>
     <td><%= teacher.display_name %></td>
@@ -48,7 +48,7 @@
   </tr>
 <% @teachers_specialist.each do |teacher| %>
   <tr>
-    <td>Grade</td>
+    <td><%= teacher.grade %></td>
     <td><%= teacher.location %></td>
     <td><%= teacher.position %></td>
     <td><%= teacher.display_name %></td>
