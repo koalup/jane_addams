@@ -1,93 +1,89 @@
 <h1>Directory</h1>
-<h2>Administrative Positions</h2>
-<table>
-  <tr>
-    <th>Position</th>
-    <th>Location</th>
-    <th>Name</th>
-    <th>Email Address</th>
-  </tr>
-<% @teachers_administrative.each do |teacher| %>
-  <tr>
-    <td><%= teacher.position %></td>
-    <td><%= teacher.location %></td>
-    <td><%= teacher.display_name %></td>
-    <td><%= teacher.email %></td>
-  </tr>
-<% end %>
-</table>
+<div class="span-24 last dir-container">
+  <div class="span-24 last dir-container-header" style="border-bottom-width:3px; border-top-width:3px; border-style: double;"><h2>PTSA Council</h2></div>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-8">Executive Board Positions</div>
+    <div class="span-8">Officer</div>
+    <div class="span-8 last">Email Addresses</div>
+  </div>
+  <% @ptsa_members_executive_board.each do |ptsa_member| %>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-8"><%= ptsa_member.position %></div>
+    <div class="span-8"><%= ptsa_member.display_name %></div>
+    <div class="span-8 last"><%= ptsa_member.email %></div>
+  </div>
+  <% end %>
+  <p>hello</p>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-8">Board Positions</div>
+    <div class="span-8">Officer</div>
+    <div class="span-8 last">Email Addresses</div>
+  </div>
+  <% @ptsa_members_board.each do |ptsa_member| %>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-8"><%= ptsa_member.position %></div>
+    <div class="span-8"><%= ptsa_member.display_name %></div>
+    <div class="span-8 last"><%= ptsa_member.email %></div>
+  </div>
+  <% end %>
+</div>
 
-<h2>Classroom Teachers</h2>
-<table>
-  <tr>
-    <th>Grade</th>
-    <th>Location</th>
-    <th>Position</th>
-    <th>Name</th>
-    <th>Email Address</th>
-  </tr>
-<% @teachers_teacher.each do |teacher| %>
-  <tr>
-    <td><%= teacher.grade %></td>
-    <td><%= teacher.location %></td>
-    <td><%= teacher.position %></td>
-    <td><%= teacher.display_name %></td>
-    <td><%= teacher.email %></td>
-  </tr>
-<% end %>
-</table>
+<div class="span-24">Hello</div>
 
-<h2>Specialists and Support Staff</h2>
-<table>
-  <tr>
-    <th>Grade</th>
-    <th>Location</th>
-    <th>Position</th>
-    <th>Name</th>
-    <th>Email Address</th>
-  </tr>
-<% @teachers_specialist.each do |teacher| %>
-  <tr>
-    <td><%= teacher.grade %></td>
-    <td><%= teacher.location %></td>
-    <td><%= teacher.position %></td>
-    <td><%= teacher.display_name %></td>
-    <td><%= teacher.email %></td>
-  </tr>
-<% end %>
-</table>
+<div class="span-24 last dir-container">
+  <div class="span-24 last dir-container-header" style="border-bottom-width:3px; border-top-width:3px; border-style: double;"><h2>Administrative Positions</h2></div>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-6">Position</div>
+    <div class="span-6">Location</div>
+    <div class="span-6">Name</div>
+    <div class="span-6 last">Email Addresses</div>
+  </div>
+  <% @teachers_administrative.each do |teacher| %>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-6"><%= teacher.position %></div>
+    <div class="span-6"><%= teacher.location %></div>
+    <div class="span-6"><%= teacher.display_name %></div>
+    <div class="span-6 last"><%= teacher.email %></div>
+  </div>
+  <% end %>
+</div>
 
+<div class="span-24 last dir-container">
+  <div class="span-24 last dir-container-header" style="border-bottom-width:3px; border-top-width:3px; border-style: double;"><h2>Classroom Teachers</h2></div>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-6">Position</div>
+    <div class="span-6">Location</div>
+    <div class="span-6">Name</div>
+    <div class="span-6 last">Email Addresses</div>
+  </div>
+  <% @teachers_teacher.each do |teacher| %>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-6"><%= teacher.position %></div>
+    <div class="span-6"><%= teacher.location %></div>
+    <div class="span-6"><%= teacher.display_name %></div>
+    <div class="span-6 last"><%= teacher.email %></div>
+  </div>
+  <% end %>
+</div>
 
-<h2>PTSA Council</h2>
-<table>
-  <tr>
-    <th>Executive Board Positions</th>
-    <th>Officer</th>
-    <th>Email Address</th>
-  </tr>
-<% @ptsa_members_executive_board.each do |ptsa_member| %>
-  <tr>
-    <td><%= ptsa_member.position %></td>
-    <td><%= ptsa_member.display_name %></td>
-    <td><%= ptsa_member.email %></td>
-  </tr>
-<% end %>
-</table>
+<div class="span-24 last dir-container">
+  <div class="span-24 last dir-container-header" style="border-bottom-width:3px; border-top-width:3px; border-style: double;"><h2>Specialists and Support Staff</h2></div>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-6">Position</div>
+    <div class="span-6">Location</div>
+    <div class="span-6">Name</div>
+    <div class="span-6 last">Email Addresses</div>
+  </div>
+  <% @teachers_specialist.each do |teacher| %>
+  <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
+    <div class="span-6"><%= teacher.position %></div>
+    <div class="span-6"><%= teacher.location %></div>
+    <div class="span-6"><%= teacher.display_name %></div>
+    <div class="span-6 last"><%= teacher.email %></div>
+  </div>
+  <% end %>
+</div>
 
-<table>
-  <tr>
-    <th>Board Positions</th>
-    <th>Officer</th>
-    <th>Email Address</th>
-  </tr>
-<% @ptsa_members_board.each do |ptsa_member| %>
-  <tr>
-    <td><%= ptsa_member.position %></td>
-    <td><%= ptsa_member.display_name %></td>
-    <td><%= ptsa_member.email %></td>
-  </tr>
-<% end %>
-</table>
 
 <% @teachers_teacher.each do |teacher| %>
   <div class="span-24 last dir-container">
@@ -97,7 +93,7 @@
       <div class="span-8 last">Teacher: <%= teacher.display_name %><br>email: <%= teacher.email %></div>
     </div>
     <div class="span-24 last dir-container-record" style="border-bottom-width:1px; border-style: solid;">
-      <div class="span-4"><b>Student</b></div>
+      <div class="span-4"><strong>Student</strong></div>
       <div class="span-4">Parents / Guardians</div>
       <div class="span-3">Home Ph.</div>
       <div class="span-7">Steet Address</div>
