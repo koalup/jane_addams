@@ -4,11 +4,7 @@
     <th>email</th>
     <th>Home Phone</th>
     <th>Cell Phone</th>
-    <th>Address Line 1</th>
-    <th>Address Line 2</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
+    <th>Address</th>
     <th></th>
   </tr>
 <% @parents.each do |parent| %>
@@ -16,11 +12,7 @@
       <td><%=h parent.email %></td>
       <td><%=h parent.home_phone %></td>
       <td><%=h parent.cell_phone %></td>
-      <td><%=h parent.address_line_1 %></td>
-      <td><%=h parent.address_line_2 %></td>
-      <td><%=h parent.city %></td>
-      <td><%=h parent.state %></td>
-      <td><%=h parent.zip %></td>
+      <td><%=h "#{parent.address_line_1} #{parent.address_line_2} #{parent.city} #{parent.state} #{parent.zip}" %></td>
       <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
       <td><%= link_to 'Delete', parent, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

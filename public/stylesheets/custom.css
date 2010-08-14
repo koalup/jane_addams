@@ -1,3 +1,21 @@
+.dir-container {
+  margin-bottom:20px;
+  margin-top:20px;
+}
+
+.dir-container-header {
+  border-bottom-width:3px;
+  border-top-width:3px;
+  border-style: double;
+  padding-bottom:10px;
+  padding-top:10px;
+}
+
+.dir-container-record {
+  border-bottom-width:1px;
+  border-style: solid;
+}
+
 .navigation {
   float: right;
 }

@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
   def create
     @teacher = Teacher.find(:all, :conditions => "position_type = 'Teacher'")
     @student = Student.new(params[:student])
+    @parents = Parent.find(:all)
     if @student.save
       redirect_to(@student, :notice => "#{@student.display_name} was successfully created.")
     else
