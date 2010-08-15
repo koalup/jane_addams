@@ -24,10 +24,23 @@
   </div>
   <fieldset>
     <legend>Parents</legend>
+    <% i = 0 %>
+    <table>
+      <tr>
     <% @parents.each do |parent| %>
-      <%= check_box_tag("student[parent_list][#{parent.id}]","1",@student.parents.detect{|d| d == parent}) %>
-      <%= "#{parent.display_name}" %> <br />
+      <td><%= check_box_tag("student[parent_list][#{parent.id}]","1",@student.parents.detect{|d| d == parent}) %>
+      <%= "#{parent.display_name}" %></td>
+      <%=
+        i = i + 1 
+        if i >= 4
+          i = 0
+          "</tr>"
+          "<tr>"
+        end
+      %>
     <% end %>
+      </tr>
+    </table>
   </fieldset>
 </fieldset>
 

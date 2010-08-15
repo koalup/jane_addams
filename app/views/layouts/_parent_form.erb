@@ -61,10 +61,23 @@
   </div>
 <fieldset>
   <legend>Children</legend>
+  <% i = 0 %>
+  <table>
+    <tr>
   <% @students.each do |student| %>
-    <%= check_box_tag("parent[student_list][#{student.id}]","1",@parent.students.detect{|d| d == student}) %>
-    <%= "#{student.display_name}" %> <br />
+    <td><%= check_box_tag("parent[student_list][#{student.id}]","1",@parent.students.detect{|d| d == student}) %>
+    <%= "#{student.display_name}" %> </td>
+    <%=
+      i = i + 1
+      if i >= 4
+        i = 0
+        "</tr>"
+        "<tr>"
+      end
+      %>
   <% end %>
+    </tr>
+  </table>
 </fieldset>
 </fieldset>
   <div class"actions">
