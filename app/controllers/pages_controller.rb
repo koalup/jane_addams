@@ -15,5 +15,7 @@ class PagesController < ApplicationController
 
     @students = Student.all
     @parents = Parent.find(:all)
+
+    render :action => "directory.html.erb", :layout => false
   end
 end

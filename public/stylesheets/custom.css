@@ -1,6 +1,7 @@
 .dir-container {
   margin-bottom:20px;
   margin-top:20px;
+  float: none;
 }
 
 .dir-container-header {
@@ -14,6 +15,14 @@
 .dir-container-record {
   border-bottom-width:1px;
   border-style: solid;
+}
+
+
+td {
+  padding-bottom:0px;
+  padding-left:1px;
+  padding-right:1px;
+  padding-top:0px;
 }
 
 .navigation {
