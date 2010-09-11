@@ -18,4 +18,12 @@ class PagesController < ApplicationController
 
     render :action => "directory.html.erb", :layout => false
   end
+
+  def ptsa_members
+    @title = "PTSA Members"
+
+    @parents = Parent.find(:all, :conditions => "ptsa_member = true")
+    @students = Student.find(:all, :conditions => "ptsa_member = true")
+
+  end
 end
