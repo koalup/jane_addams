@@ -22,6 +22,25 @@
     <%= f.label :teacher_id %><br />
     <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, {:prompt => true}) %>
   </div>
+
+  <div class="field">
+    <%= f.label :ptsa_member, "PTSA Member?" %><br />
+    <%= f.check_box :ptsa_member %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :ptsa_member_id, "PTSA Member Id" %><br />
+    <%= f.text_field :ptsa_member_id,:maxlength => 10 %><br />
+  </div>
+  <div class="field">
+    <%= f.label :yearbook %><br />
+    <%= f.check_box :yearbook %><br />
+  </div>
+  <div class="field">
+    <%= f.label :yearbook_qty %><br />
+    <%= f.text_field :yearbook_qty, :maxlength => 1 %><br />
+  </div>
+
   <fieldset>
     <legend>Parents</legend>
     <% i = 0 %>

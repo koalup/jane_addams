@@ -44,19 +44,23 @@
     <%= f.text_field :zip %><br />
   </div>
   <div class="field">
-    <%= f.label :show_cell_phone %><br />
+    <%= f.label :show_cell_phone, "Show Cell Phone?" %><br />
     <%= f.check_box :show_cell_phone %><br />
   </div>
   <div class="field">
-    <%= f.label :mailing_list %><br />
+    <%= f.label :mailing_list, "Include in Yahoo Mailing List?" %><br />
     <%= f.check_box :mailing_list %><br />
   </div>
   <div class="field">
-    <%= f.label :ptsa_member %><br />
+    <%= f.label :ptsa_member, "PTSA Member?" %><br />
     <%= f.check_box :ptsa_member %><br />
   </div>
+      <div class="field">
+    <%= f.label :ptsa_member_id, "PTSA Member Id" %><br />
+    <%= f.text_field :ptsa_member_id, :maxlength => 10 %><br />
+  </div>
   <div class="field">
-    <%= f.label :publish %><br />
+    <%= f.label :publish, "Publish in Directory?" %><br />
     <%= f.check_box :publish %><br />
   </div>
 <fieldset>

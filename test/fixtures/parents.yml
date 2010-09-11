@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100809112804
+# Schema version: 20100911053739
 #
 # Table name: parents
 #
@@ -20,6 +20,7 @@
 #  publish         :boolean(1)      default(TRUE)
 #  created_at      :datetime
 #  updated_at      :datetime
+#  ptsa_member_id  :integer(8)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

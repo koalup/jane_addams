@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100805225544
+# Schema version: 20100911071814
 #
 # Table name: students
 #
@@ -10,10 +10,14 @@
 #  teacher_id      :integer(4)
 #  created_at      :datetime
 #  updated_at      :datetime
+#  ptsa_member     :boolean(1)
+#  ptsa_member_id  :integer(8)
+#  yearbook        :boolean(1)
+#  yearbook_qty    :integer(4)
 #
 
 class Student < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :graduation_year, :teacher_id, :parent_list
+  attr_accessible :first_name, :last_name, :graduation_year, :teacher_id, :parent_list, :ptsa_member, :ptsa_member_id, :ptsa_member, :ptsa_member_id, :yearbook, :yearbook_qty
   validates_presence_of :first_name, :last_name, :graduation_year, :teacher_id
 
   has_and_belongs_to_many :parents

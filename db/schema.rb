@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100811084209) do
+ActiveRecord::Schema.define(:version => 20100911071814) do
 
   create_table "parents", :force => true do |t|
     t.string   "first_name"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(:version => 20100811084209) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.boolean  "show_cell_phone", :default => false
-    t.boolean  "mailing_list",    :default => false
-    t.boolean  "ptsa_member",     :default => false
-    t.boolean  "publish",         :default => true
+    t.boolean  "show_cell_phone",              :default => false
+    t.boolean  "mailing_list",                 :default => false
+    t.boolean  "ptsa_member",                  :default => false
+    t.boolean  "publish",                      :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ptsa_member_id",  :limit => 8
   end
 
   create_table "parents_students", :id => false, :force => true do |t|
@@ -52,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20100811084209) do
     t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "ptsa_member",                  :default => false
+    t.integer  "ptsa_member_id",  :limit => 8
+    t.boolean  "yearbook",                     :default => false
+    t.integer  "yearbook_qty"
   end
 
   add_index "students", ["teacher_id"], :name => "index_students_on_teacher_id"

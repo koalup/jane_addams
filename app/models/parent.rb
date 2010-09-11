@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100809112804
+# Schema version: 20100911053739
 #
 # Table name: parents
 #
@@ -20,10 +20,11 @@
 #  publish         :boolean(1)      default(TRUE)
 #  created_at      :datetime
 #  updated_at      :datetime
+#  ptsa_member_id  :integer(8)
 #
 
 class Parent < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :home_phone, :cell_phone, :address_line_1, :address_line_2, :city, :state, :zip, :show_cell_phone, :mailing_list, :ptsa_member, :publish, :student_list
+  attr_accessible :first_name, :last_name, :email, :home_phone, :cell_phone, :address_line_1, :address_line_2, :city, :state, :zip, :show_cell_phone, :mailing_list, :ptsa_member, :publish, :student_list, :ptsa_member_id
   validates_presence_of :first_name, :last_name
   has_and_belongs_to_many :students
   default_scope :order => 'last_name'

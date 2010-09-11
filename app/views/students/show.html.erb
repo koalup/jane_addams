@@ -11,6 +11,12 @@
     <dd><%= link_to @student.teacher.display_name, @student.teacher %></dd> 
     <dt>Room</dt>
     <dd><%= @student.teacher.location %></dd> 
+    <dt>Properties</dt>
+      <dd>PTSA Member: <b><%= @student.ptsa_member %></b></dd>
+      <dd>PTSA Member Id: <b><%= @student.ptsa_member_id %></b></dd>
+      <dd>Yearbook: <b><%= @student.yearbook %></b></dd>
+      <dd>Yearbook Qty: <b><%= @student.yearbook_qty %></b></dd>
+    
   </dl>
   <fieldset>
     <legend>Parents</legend>
