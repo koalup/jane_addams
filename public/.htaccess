@@ -1,0 +1,4 @@
+  AuthName "jane-addams"
+  AuthType Digest
+  AuthUserFile /etc/httpd/htdigest
+  require valid-user

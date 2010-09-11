@@ -66,7 +66,7 @@
     <tr>
   <% @students.each do |student| %>
     <td><%= check_box_tag("parent[student_list][#{student.id}]","1",@parent.students.detect{|d| d == student}) %>
-    <%= "#{student.display_name}" %> </td>
+    <%= link_to student.display_name, student %></td>
     <%=
       i = i + 1
       if i >= 4
