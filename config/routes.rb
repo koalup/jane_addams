@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home '/', :controller => 'pages', :action => 'home'
   map.directory 'directory', :controller => 'pages', :action => 'directory'
   map.ptsa_members 'ptsa_members', :controller => 'pages', :action => 'ptsa_members'
+  map.yearbook_orders 'yearbook_orders', :controller => 'pages', :action => 'yearbook_orders'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

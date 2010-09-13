@@ -16,14 +16,15 @@ class PagesController < ApplicationController
     @students = Student.all
     @parents = Parent.find(:all)
 
-    render :action => "directory.html.erb", :layout => false
+    #render :action => "directory.html.erb", :layout => false
   end
 
   def ptsa_members
-    @title = "PTSA Members"
-
     @parents = Parent.find(:all, :conditions => "ptsa_member = true")
     @students = Student.find(:all, :conditions => "ptsa_member = true")
+  end
 
+  def yearbook_orders
+    @students = Student.find(:all, :conditions => "yearbook = true")
   end
 end

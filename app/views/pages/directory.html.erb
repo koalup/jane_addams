@@ -1,157 +1,133 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title><%= title %></title>
-    <link href="/stylesheets/blueprint/screen.css" rel="stylesheet" type="text/css" />
-    <link href="/stylesheets/blueprint/print.css" media="print" rel="stylesheet" type="text/css" />
-    <!--[if lt IE 8]><link href="/stylesheets/blueprint/ie.css?1280990680" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-    <link href="/stylesheets/custom.css" media="screen,print" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-
-<div class="container">
-
-<div class="span-24 last dir-container">
-  <div class="span-24 last dir-container-header"><h2>Administrative Positions</h2></div>
-  <div class="span-24 last dir-container-record">
-    <div class="span-6"><strong>Position</strong></div>
-    <div class="span-6"><strong>Location</strong></div>
-    <div class="span-6"><strong>Name</strong></div>
-    <div class="span-6 last"><strong>Email Addresses</strong></div>
-  </div>
+<h1>Directory</h1>
+<h2>Administrative Positions</h2>
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Location<th>
+    <th>Name</th>
+    <th>Email Addresses</th>
+  </tr>
   <% @teachers_administrative.each do |teacher| %>
-  <div class="span-24 last dir-container-record">
-    <div class="span-6"><%= teacher.position %></div>
-    <div class="span-6"><%= teacher.location %></div>
-    <div class="span-6"><%= teacher.display_name %></div>
-    <div class="span-6 last"><%= teacher.email %></div>
-  </div>
+  <tr>
+    <td><%= teacher.position %></td>
+    <td><%= teacher.location %></td>
+    <td><%= teacher.display_name %></td>
+    <td><%= teacher.email %></td>
+  </tr>
   <% end %>
-</div>
+</table>
 
-<div class="span-24 last dir-container">
-  <div class="span-24 last dir-container-header"><h2>Classroom Teachers</h2></div>
-  <div class="span-24 last dir-container-record">
-    <div class="span-3"><strong>Gradei</strong></div>
-    <div class="span-3"><strong>Location</strong></div>
-    <div class="span-6"><strong>Position</strong></div>
-    <div class="span-6"><strong>Name</strong></div>
-    <div class="span-6 last"><strong>Email Addresses</strong></div>
-  </div>
+
+<h2>Classroom Teachers</h2>
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Location<th>
+    <th>Name</th>
+    <th>Email Addresses</th>
+  </tr>
   <% @teachers_teacher.each do |teacher| %>
-  <div class="span-24 last dir-container-record">
-    <div class="span-3"><%= teacher.grade %>&nbsp;</div>
-    <div class="span-3"><%= teacher.location %>&nbsp;</div>
-    <div class="span-6"><%= teacher.position %>&nbsp;</div>
-    <div class="span-6"><%= teacher.display_name %>&nbsp;</div>
-    <div class="span-6 last"><%= teacher.email %>&nbsp;</div>
-  </div>
+  <tr>
+    <td><%= teacher.position %></td>
+    <td><%= teacher.location %></td>
+    <td><%= teacher.display_name %></td>
+    <td><%= teacher.email %></td>
+  </tr>
   <% end %>
-</div>
+</table>
 
-<div class="span-24 last dir-container">
-  <div class="span-24 last dir-container-header"><h2>Specialists and Support Staff</h2></div>
-  <div class="span-24 last dir-container-record">
-    <div class="span-3"><strong>Grade</strong></div>
-    <div class="span-3"><strong>Location</strong></div>
-    <div class="span-6"><strong>Position</strong></div>
-    <div class="span-6"><strong>Name</strong></div>
-    <div class="span-6 last"><strong>Email Addresses</strong></div>
-  </div>
+
+<h2>Specialists and Support Staff</h2>
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Location<th>
+    <th>Name</th>
+    <th>Email Addresses</th>
+  </tr>
   <% @teachers_specialist.each do |teacher| %>
-  <div class="span-24 last dir-container-record">
-    <div class="span-3"><%= teacher.grade %>&nbsp;</div>
-    <div class="span-3"><%= teacher.location %>&nbsp;</div>
-    <div class="span-6"><%= teacher.position %>&nbsp;</div>
-    <div class="span-6"><%= teacher.display_name %>&nbsp;</div>
-    <div class="span-6 last"><%= teacher.email %>&nbsp;</div>
-  </div>
+  <tr>
+    <td><%= teacher.position %></td>
+    <td><%= teacher.location %></td>
+    <td><%= teacher.display_name %></td>
+    <td><%= teacher.email %></td>
+  </tr>
   <% end %>
-</div>
+</table>
 
-<div class="span-24 last" style="page-break-after:always"></div>
 
-<div class="span-24 last dir-container">
-  <div class="span-24 last dir-container-header"><h2>PTSA Council</h2></div>
-  <div class="span-24 last dir-container-record">
-    <div class="span-8"><strong>Executive Board Positions</strong></div>
-    <div class="span-8"><strong>Officer</strong></div>
-    <div class="span-8 last"><strong>Email Addresses</strong></div>
-  </div>
+<h2>PTSA Board Members</h2>
+<table>
+  <tr>
+    <th>Executive Board Positions</th>
+    <th>Officer</th>
+    <th>Email Addresses</th>
+  </tr>
   <% @ptsa_board_members_executive_board.each do |ptsa_board_member| %>
-  <div class="span-24 last dir-container-record">
-    <div class="span-8"><%= ptsa_board_member.position %></div>
-    <div class="span-8"><%= ptsa_board_member.display_name %></div>
-    <div class="span-8 last"><%= ptsa_board_member.email %></div>
-  </div>
+  <tr>
+    <td><%= ptsa_board_member.position %></td>
+    <td><%= ptsa_board_member.display_name %></td>
+    <td><%= ptsa_board_member.email %></td>
+  </tr>
   <% end %>
+</table>
 
-  <div class="span-24 last">&nbsp;</div>
-
-  <div class="span-24 last dir-container-record">
-    <div class="span-8"><strong>Board Positions</strong></div>
-    <div class="span-8"><strong>Officer</strong></div>
-    <div class="span-8 last"><strong>Email Addresses</strong></div>
-  </div>
+<table>
+  <tr>
+    <th>Executive Board Positions</th>
+    <th>Officer</th>
+    <th>Email Addresses</th>
+  </tr>
   <% @ptsa_board_members_board.each do |ptsa_board_member| %>
-  <div class="span-24 last dir-container-record">
-    <div class="span-8"><%= ptsa_board_member.position %></div>
-    <div class="span-8"><%= ptsa_board_member.display_name %></div>
-    <div class="span-8 last"><%= ptsa_board_member.email %></div>
-  </div>
+  <tr>
+    <td><%= ptsa_board_member.position %></td>
+    <td><%= ptsa_board_member.display_name %></td>
+    <td><%= ptsa_board_member.email %></td>
+  </tr>
   <% end %>
-</div>
+</table>
 
-<% grade = "" %>
+
 
 <% @teachers_teacher.each do |teacher| %>
   <% next if teacher.students.count == 0 %>
-  <%= 
-    if grade != teacher.grade 
-      grade = teacher.grade
-      '<div class="span-24" style="page-break-before:always"></div>'
-    end
-  %>
+  <h2><%= teacher.display_name %></h2>
+  <div><%= teacher.email %></div>
+  <div><strong>Grade:</strong> <%= teacher.grade %></div>
+  <div><strong>Room:</strong>  <%= teacher.location %></div>
 
-  <div class="span-24 last dir-container">
-    <div class="span-24 last dir-container-header">
-      <div class="span-4">Room: <%= teacher.location %><br>Grade: <%= teacher.grade %></div>
-      <div class="span-14" style="text-align:center"><h3>Jane Addams K-8 2009-2010 Directory</h3></div>
-      <div class="span-6 last">Teacher: <%= teacher.display_name %><br>email: <%= teacher.email %></div>
-    </div>
-    <div class="span-24 last dir-container-record">
-      <div class="span-4"><strong>Student</strong></div>
-      <div class="span-4"><strong>Parents / Guardians</strong></div>
-      <div class="span-3"><strong>Home Ph.</strong></div>
-      <div class="span-7"><strong>Steet Address</strong></div>
-      <div class="span-5"><strong>Emai Addresses</strong></div>
-      <div class="span-1 last"><strong>Gr.</strong></div>
-    </div>
+  <table>
+    <tr>
+      <th style="vertical-align:top; width:120px">Student</th>
+      <th>
+        <table>
+          <tr>
+            <th style="width:120px">Parents / Guardians</th>
+            <th style="width:90px" >Home Ph.</th>
+            <th style="width:210px">Steet Address</th>
+            <th style="width:150px">Emai Addresses</th>
+          </tr>
+        </table>
+      </th>
+      <th style="vertical-align:top; width:30px">Gr.</th>
+    </tr>
     <% teacher.students.each do |student| %>
-      <div class="span-24 last dir-container-record">
-        <div class="span-4" ><%= student.display_name %>&nbsp;</div>
-        <div class="span-19">
-        <%= 
-          if student.parents.count == 0 
-            '&nbsp;' 
-          end 
-        %>
-        <% student.parents.each do |parent| %>
-          <div class="span-19 last">
-            <div class="span-4"><%= parent.display_name %>&nbsp;</div>
-            <div class="span-3"><%= parent.home_phone %>&nbsp;</div>
-            <div class="span-7"><%= "#{parent.address_line_1} #{parent.address_line_2} #{parent.city} #{parent.state} #{parent.zip}" %>&nbsp;</div>
-            <div class="span-5 last"><%= parent.email %>&nbsp;</div>
-          </div>
-        <% end %>
-        </div>
-        <div class="span-1 last"><%= student.grade %>&nbsp;</div>
-      </div>
+    <tr>
+      <td style="vertical-align:top; width:120px"><%= student.display_name %></td>
+      <td>
+        <table>
+          <% student.parents.each do |parent| %>
+          <tr>
+            <td style="width:120px"><%= parent.display_name %></td>
+            <td style="width:90px" ><%= parent.home_phone %></td>
+            <td style="width:210px"><%= "#{parent.address_line_1} #{parent.address_line_2} #{parent.city} #{parent.state} #{parent.zip}" %></td>
+            <td style="width:150px"><%= parent.email %></td>
+          </tr>
+          <% end %>
+        </table>
+      </td>
+      <td style="vertical-align:top; width:30px"><%= student.grade %></td>
+    </tr>
     <% end %>
-  </div>
+  </table>
 <% end %>
-</div>
-</body>
-</html>
-
