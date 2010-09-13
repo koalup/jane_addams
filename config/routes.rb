@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :teachers
   map.resources :students
   map.resources :parents
-  map.resources :ptsa_members
+  map.resources :ptsa_board_members
   map.root      :controller => 'pages', :action => 'home'
   map.home '/', :controller => 'pages', :action => 'home'
   map.directory 'directory', :controller => 'pages', :action => 'directory'

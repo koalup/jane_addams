@@ -1,0 +1,13 @@
+<h1>Show PTSA Board Member</h1>
+<p><%= notice %></p>
+<fieldset>
+<legend><%= "#{@ptsa_board_member.display_name}" %> - <%= link_to 'Edit', edit_ptsa_board_member_path(@ptsa_board_member) %></legend>
+<dl>
+  <dt>Position</dt>
+  <dd><%=h @ptsa_board_member.position %></dd>
+  <dt>Position Type</dt>
+  <dd><%=h @ptsa_board_member.position_type %></dd>
+  <dt>Email</dt>
+  <dd><%=h @ptsa_board_member.email %></dd>
+</dl>
+</fieldset>

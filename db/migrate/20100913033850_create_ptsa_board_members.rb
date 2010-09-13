@@ -1,6 +1,6 @@
-class CreatePtsaMembers < ActiveRecord::Migration
+class CreatePtsaBoardMembers < ActiveRecord::Migration
   def self.up
-    create_table :ptsa_members do |t|
+    create_table :ptsa_board_members do |t|
       t.string :first_name
       t.string :last_name
       t.string :email
@@ -12,6 +12,6 @@ class CreatePtsaMembers < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :ptsa_members
+    drop_table :ptsa_board_members
   end
 end

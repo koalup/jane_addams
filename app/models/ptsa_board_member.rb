@@ -1,7 +1,7 @@
 # == Schema Information
-# Schema version: 20100809112804
+# Schema version: 20100913033850
 #
-# Table name: ptsa_members
+# Table name: ptsa_board_members
 #
 #  id            :integer(4)      not null, primary key
 #  first_name    :string(255)
@@ -13,11 +13,11 @@
 #  updated_at    :datetime
 #
 
-class PtsaMember < ActiveRecord::Base
+class PtsaBoardMember < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :position, :position_type
   validates_presence_of :first_name, :last_name, :position, :position_type
   default_scope :order => 'last_name'
-  
+
   def display_name
     if last_name.nil?
       display_name=""

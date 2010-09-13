@@ -79,11 +79,11 @@
     <div class="span-8"><strong>Officer</strong></div>
     <div class="span-8 last"><strong>Email Addresses</strong></div>
   </div>
-  <% @ptsa_members_executive_board.each do |ptsa_member| %>
+  <% @ptsa_board_members_executive_board.each do |ptsa_board_member| %>
   <div class="span-24 last dir-container-record">
-    <div class="span-8"><%= ptsa_member.position %></div>
-    <div class="span-8"><%= ptsa_member.display_name %></div>
-    <div class="span-8 last"><%= ptsa_member.email %></div>
+    <div class="span-8"><%= ptsa_board_member.position %></div>
+    <div class="span-8"><%= ptsa_board_member.display_name %></div>
+    <div class="span-8 last"><%= ptsa_board_member.email %></div>
   </div>
   <% end %>
 
@@ -94,11 +94,11 @@
     <div class="span-8"><strong>Officer</strong></div>
     <div class="span-8 last"><strong>Email Addresses</strong></div>
   </div>
-  <% @ptsa_members_board.each do |ptsa_member| %>
+  <% @ptsa_board_members_board.each do |ptsa_board_member| %>
   <div class="span-24 last dir-container-record">
-    <div class="span-8"><%= ptsa_member.position %></div>
-    <div class="span-8"><%= ptsa_member.display_name %></div>
-    <div class="span-8 last"><%= ptsa_member.email %></div>
+    <div class="span-8"><%= ptsa_board_member.position %></div>
+    <div class="span-8"><%= ptsa_board_member.display_name %></div>
+    <div class="span-8 last"><%= ptsa_board_member.email %></div>
   </div>
   <% end %>
 </div>
