@@ -1,11 +1,40 @@
 <h1>PTSA Members</h1>
-<fieldset>
-  <legend>Parents</legend>
-  <%= render 'layouts/parent_list' %>
-</fieldset>
+<h2>Parents</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>PTSA Member Id</th>
+    <th>Home Phone</th>
+    <th>Cell Phone</th>
+    <th>Address</th>
+    <th>email</th>
+  </tr>
+<% @parents.each do |parent| %>
+      <td><%= link_to parent.display_name, parent %></td>
+      <td><%=h parent.ptsa_member_id %>
+      <td><%=h parent.home_phone %></td>
+      <td><%=h parent.cell_phone %></td>
+      <td><%=h "#{parent.address_line_1} #{parent.address_line_2} #{parent.city} #{parent.state} #{parent.zip}" %></td>
+      <td><%=h parent.email %></td>
+      <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+    </tr>
+<% end %>
+</table>
 
-<fieldset>
-  <legend>Students</legend>
-  <%= render 'layouts/student_list' %>
-</fieldset>
+
+<h2>Students</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>PTSA Member Id</th>
+    <th>Grade</th>
+  </tr>
+<% @students.each do |student| %>
+      <td><%= link_to student.display_name, student %></td>
+      <td><%=h student.ptsa_member_id %>
+      <td><%=h student.grade %></td>
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    </tr>
+<% end %>
+</table>
 

@@ -1,16 +1,14 @@
 <h1>Yearbook Orders</h1>
 <table>
   <tr>
-    <th>Yearbook Qty</th>
     <th>Name</th>
-    <th>Graduation Year</th>
+    <th>Yearbook Qty</th>
     <th>Grade</th>
     <th>Teacher</th>
   </tr>
 <% @students.each do |student| %>
-      <td><%= student.yearbook_qty %></td>
       <td><%= link_to student.display_name, student %></td>
-      <td><%=h student.graduation_year %></td>
+      <td><%= student.yearbook_qty %></td>
       <td><%=h student.grade %></td>
       <td><%= link_to student.teacher.display_name, student.teacher %></td>
       <td><%= link_to 'Edit', edit_student_path(student) %></td>

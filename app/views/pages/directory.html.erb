@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Position</th>
-    <th>Location<th>
+    <th>Location</th>
     <th>Name</th>
     <th>Email Addresses</th>
   </tr>
@@ -22,7 +22,7 @@
 <table>
   <tr>
     <th>Position</th>
-    <th>Location<th>
+    <th>Location</th>
     <th>Name</th>
     <th>Email Addresses</th>
   </tr>
@@ -41,7 +41,7 @@
 <table>
   <tr>
     <th>Position</th>
-    <th>Location<th>
+    <th>Location</th>
     <th>Name</th>
     <th>Email Addresses</th>
   </tr>
@@ -96,16 +96,16 @@
   <div><strong>Grade:</strong> <%= teacher.grade %></div>
   <div><strong>Room:</strong>  <%= teacher.location %></div>
 
-  <table>
+  <table style="width:0%;">
     <tr>
-      <th style="vertical-align:top; width:120px">Student</th>
+      <th style="vertical-align:top; width:150px">Student</th>
       <th>
-        <table>
+        <table style="width:0%; margin-bottom:0px">
           <tr>
-            <th style="width:120px">Parents / Guardians</th>
+            <th style="width:150px">Parents / Guardians</th>
             <th style="width:90px" >Home Ph.</th>
-            <th style="width:210px">Steet Address</th>
-            <th style="width:150px">Emai Addresses</th>
+            <th style="width:270px">Steet Address</th>
+            <th style="width:210px">Emai Addresses</th>
           </tr>
         </table>
       </th>
@@ -113,20 +113,20 @@
     </tr>
     <% teacher.students.each do |student| %>
     <tr>
-      <td style="vertical-align:top; width:120px"><%= student.display_name %></td>
+      <td style="width:150px; vertical-align:top;"><%= student.display_name %></td>
       <td>
-        <table>
+        <table style="width:0%; margin-bottom:0px;">
           <% student.parents.each do |parent| %>
           <tr>
-            <td style="width:120px"><%= parent.display_name %></td>
-            <td style="width:90px" ><%= parent.home_phone %></td>
-            <td style="width:210px"><%= "#{parent.address_line_1} #{parent.address_line_2} #{parent.city} #{parent.state} #{parent.zip}" %></td>
-            <td style="width:150px"><%= parent.email %></td>
+            <td style="width:150px;"><%= parent.display_name %></td>
+            <td style="width:90px;" ><%= parent.home_phone %></td>
+            <td style="width:270px;"><%= "#{parent.address_line_1} #{parent.address_line_2} #{parent.city} #{parent.state} #{parent.zip}" %></td>
+            <td style="width:210px;"><%= parent.email %></td>
           </tr>
           <% end %>
         </table>
       </td>
-      <td style="vertical-align:top; width:30px"><%= student.grade %></td>
+      <td style="vertical-align:top; width:30px;"><%= student.grade %></td>
     </tr>
     <% end %>
   </table>
