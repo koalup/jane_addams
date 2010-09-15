@@ -37,6 +37,17 @@
     <%= f.label :position_type %><br />
     <%= f.select :position_type, @teacher.position_types, { :include_blank => true } %>
   </div>
+
+  <div class="field">
+    <%= f.label :ptsa_member, "PTSA Member?" %><br />
+    <%= f.check_box :ptsa_member %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :ptsa_member_id, "PTSA Member Id" %><br />
+    <%= f.text_field :ptsa_member_id, :maxlength => 10 %><br />
+  </div>
+
 </fieldset>
 
   <div class"actions">

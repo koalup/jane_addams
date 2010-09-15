@@ -38,3 +38,30 @@
 <% end %>
 </table>
 
+
+<h2>Teachers</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>PTSA Member Id</th>
+    <th>Email</th>
+    <th>Grade</th>
+    <th>Position</th>
+    <th>Position Type</th>
+    <th>Location</th>
+  </tr>
+
+<% @teachers.each do |teacher| %>
+    <tr>
+      <td><%= link_to teacher.display_name, teacher %></td>
+      <td><%= teacher.ptsa_member_id %></td>
+      <td><%= teacher.email %></td>
+      <td><%= teacher.grade %></td>
+      <td><%= teacher.position %></td>
+      <td><%= teacher.position_type %></td>
+      <td><%= teacher.location %></td>
+      <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+    </tr>
+<% end %>
+</table>
+

@@ -18,7 +18,7 @@
 
 class Student < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :graduation_year, :teacher_id, :parent_list, :ptsa_member, :ptsa_member_id, :ptsa_member, :ptsa_member_id, :yearbook, :yearbook_qty
-  validates_presence_of :first_name, :last_name, :graduation_year, :teacher_id
+  validates_presence_of :first_name, :last_name
 
   has_and_belongs_to_many :parents
   belongs_to :teacher
@@ -28,20 +28,20 @@ class Student < ActiveRecord::Base
   after_save :update_parents
 
   def display_name
-    if last_name.nil?
-      display_name=""
-    else
-      "#{last_name}, #{first_name}"
+    if ! last_name.nil?
+      display_name = "#{last_name}, #{first_name}"
     end
   end
 
   def grade
-    current_month = Date.current.month
-    current_year  = Date.current.year
-    if current_month >= 7
-      grade = 8 - (graduation_year - current_year) + 1
-    else
-      grade = 8 - (graduation_year - current_year)
+    if ! graduation_year.nil?
+      current_month = Date.current.month
+      current_year  = Date.current.year
+      if current_month >= 7
+        grade = 8 - (graduation_year - current_year) + 1
+      else
+        grade = 8 - (graduation_year - current_year)
+      end
     end
   end
 

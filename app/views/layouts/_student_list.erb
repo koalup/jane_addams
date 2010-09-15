@@ -9,7 +9,7 @@
       <td><%= link_to student.display_name, student %></td>
       <td><%=h student.graduation_year %></td>
       <td><%=h student.grade %></td>
-      <td><%= link_to student.teacher.display_name, student.teacher %></td>
+      <td><%= link_to student.teacher.display_name, student.teacher if student.teacher %></td>
       <td><%= link_to 'Edit', edit_student_path(student) %></td>
       <td><%= link_to 'Delete', student, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

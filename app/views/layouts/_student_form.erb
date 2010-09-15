@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :teacher_id %><br />
-    <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, {:prompt => true}) %>
+    <%= collection_select(:student, :teacher_id, @teacher, :id, :location_dash_teacher, { :include_blank => true }) %>
   </div>
 
   <div class="field">

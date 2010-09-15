@@ -22,9 +22,14 @@ class PagesController < ApplicationController
   def ptsa_members
     @parents = Parent.find(:all, :conditions => "ptsa_member = true")
     @students = Student.find(:all, :conditions => "ptsa_member = true")
+    @teachers = Teacher.find(:all, :conditions => "ptsa_member = true")
   end
 
   def yearbook_orders
     @students = Student.find(:all, :conditions => "yearbook = true")
+  end
+
+  def mailing_list
+    @parents = Parent.find(:all, :conditions => "mailing_list = true")
   end
 end

@@ -16,7 +16,7 @@
 #
 
 class Teacher < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :position, :position_type, :location, :grade
+  attr_accessible :first_name, :last_name, :email, :position, :position_type, :location, :grade, :ptsa_member, :ptsa_member_id
 
   validates_presence_of :first_name, :last_name, :position, :position_type
   has_many :students
@@ -24,9 +24,9 @@ class Teacher < ActiveRecord::Base
 
   def display_name
     if last_name.nil?
-      display_name=""
+      display_name = ""
     else
-      "#{last_name}, #{first_name}"
+      display_name = "#{last_name}, #{first_name}"
     end
   end
 

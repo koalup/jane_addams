@@ -1,0 +1,15 @@
+<h1>Mailing List</h1>
+<h2>Parents</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>email</th>
+  </tr>
+<% @parents.each do |parent| %>
+      <td><%= link_to parent.display_name, parent %></td>
+      <td><%=h parent.email %></td>
+      <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+    </tr>
+<% end %>
+</table>
+

@@ -13,6 +13,9 @@
   <dd><%=h @teacher.grade %></dd>
   <dt>Location</dt>
   <dd><%=h @teacher.location %></dd>
+  <td>Properties</dt>
+  <dd>PTSA Member:<strong> <%=h @teacher.ptsa_member ? 'yes' : 'no' %></strong></dd>
+  <dd>PTSA Member Id:<strong> <%=h @teacher.ptsa_member_id %></strong></dd>
 </dl>
 <fieldset>
 <legend>Students</legend>
